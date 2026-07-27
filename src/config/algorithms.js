@@ -1601,6 +1601,22 @@ export const algorithmRegistry = {
 },
     component: dynamic(() => import('@/app/visualizer/tree/advanced/segment/AlgorithmClient')),
   },
+  "tree/advanced/segment-2d": {
+    metadata: {
+  title: "2D Segment Tree Visualizer | Interactive Matrix Range Query & Point Updates | AlgoBuddy",
+  description:
+    "Explore 2D Segment Tree (Tree of Trees) structures, dynamic grid queries, matrix builds, and point updates step-by-step with interactive grid animations, explanations, and quizzes.",
+  keywords: [
+    "2D Segment Tree",
+    "Matrix Range Query",
+    "Grid Point Update",
+    "DSA Tree Animations",
+    "Tree of Trees"
+  ],
+  robots: "index, follow",
+},
+    component: dynamic(() => import('@/app/visualizer/tree/advanced/segment-2d/AlgorithmClient')),
+  },
   "tree/advanced/trie": {
     metadata: {
   title: "Trie (Prefix Tree) Visualizer | Interactive Word Search & Autocomplete | AlgoBuddy",
@@ -1947,4 +1963,167 @@ export const algorithmRegistry = {
 },
     component: dynamic(() => import('@/app/visualizer/tree/traversing/pre-order/AlgorithmClient')),
   },
+  "string/reverse-string": {
+  metadata: {
+    title: "Reverse String | AlgoBuddy",
+    description:
+      "Visualize the Reverse String algorithm with step-by-step animation.",
+    keywords: [
+      "Reverse String",
+      "String",
+      "String Visualizer",
+      "Reverse String Visualizer",
+    ],
+    robots: "index, follow",
+  },
+
+  component: dynamic(() =>
+    import("@/app/visualizer/string/reverse-string/page")
+  ),
+},
+"string/palindrome-check": {
+  metadata: {
+    title: "Palindrome Check | AlgoBuddy",
+    description:
+      "Visualize the Palindrome Check algorithm with step-by-step animation.",
+    keywords: [
+      "Palindrome Check",
+      "Palindrome",
+      "String",
+      "String Visualizer",
+    ],
+    robots: "index, follow",
+  },
+
+  component: dynamic(() =>
+    import("@/app/visualizer/string/palindrome-check/page")
+  ),
+},
+"string/character-frequency": {
+  metadata: {
+    title: "Character Frequency | AlgoBuddy",
+    description:
+      "Visualize the Character Frequency algorithm with step-by-step animation.",
+    keywords: [
+      "Character Frequency",
+      "String",
+      "HashMap",
+      "Frequency Counter",
+      "Character Frequency Visualizer",
+    ],
+    robots: "index, follow",
+  },
+
+  component: dynamic(() =>
+    import("@/app/visualizer/string/character-frequency/page")
+  ),
+},
+"string/anagram-check": {
+  metadata: {
+    title: "Anagram Check | AlgoBuddy",
+    description:
+      "Visualize the Anagram Check algorithm with step-by-step animation.",
+    keywords: [
+      "Anagram Check",
+      "String",
+      "HashMap",
+      "Anagram Visualizer",
+    ],
+    robots: "index, follow",
+  },
+
+  component: dynamic(() =>
+    import("@/app/visualizer/string/anagram-check/page")
+  ),
+},
+"string/longest-common-prefix": {
+  metadata: {
+    title: "Longest Common Prefix | AlgoBuddy",
+    description:
+      "Visualize the Longest Common Prefix algorithm with step-by-step animation.",
+    keywords: [
+      "Longest Common Prefix",
+      "LCP",
+      "String",
+      "String Visualizer",
+    ],
+    robots: "index, follow",
+  },
+
+  component: dynamic(() =>
+    import("@/app/visualizer/string/longest-common-prefix/page")
+  ),
+},
+"string/kmp-algorithm": {
+  metadata: {
+    title: "KMP Algorithm | AlgoBuddy",
+    description:
+      "Visualize the Knuth-Morris-Pratt string matching algorithm step by step.",
+    keywords: [
+      "KMP",
+      "Knuth Morris Pratt",
+      "Pattern Matching",
+      "String",
+    ],
+    robots: "index,follow",
+  },
+  component: dynamic(() =>
+    import("@/app/visualizer/string/kmp-algorithm/page")
+  ),
+},
+"string/rabin-karp": {
+  metadata: {
+    title: "Rabin-Karp Algorithm Visualizer | AlgoBuddy",
+    description:
+      "Learn and visualize the Rabin-Karp string matching algorithm step by step using rolling hash, interactive animations, code examples, and quizzes.",
+    keywords: [
+      "Rabin-Karp",
+      "String Matching",
+      "Pattern Matching",
+      "Rolling Hash",
+      "Algorithms",
+      "AlgoBuddy",
+    ],
+    category: "String",
+    difficulty: "Medium",
+  },
+},
+"string/longest-substring": {
+  metadata: {
+    title:
+      "Longest Substring Without Repeating Characters | AlgoBuddy",
+    description:
+      "Visualize the Longest Substring Without Repeating Characters algorithm using the Sliding Window technique.",
+    keywords: [
+      "Longest Substring",
+      "Sliding Window",
+      "HashMap",
+      "String Algorithms",
+      "AlgoBuddy",
+    ],
+    robots: "index, follow",
+  },
+  component: dynamic(() =>
+    import("@/app/visualizer/string/longest-substring/page")
+  ),
+},
+"string/minimum-window-substring": {
+  metadata: {
+    title: "Minimum Window Substring | AlgoBuddy",
+    description:
+      "Visualize the Minimum Window Substring algorithm using the Sliding Window technique.",
+    keywords: [
+      "Minimum Window Substring",
+      "Sliding Window",
+      "HashMap",
+      "String Algorithms",
+      "AlgoBuddy",
+    ],
+    robots: "index, follow",
+  },
+
+  component: dynamic(() =>
+    import("@/app/visualizer/string/minimum-window-substring/page")
+  ),
+},
 };

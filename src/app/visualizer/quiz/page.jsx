@@ -1,10 +1,13 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { Layers, GitBranch, Terminal, HelpCircle, ArrowRight, Search, Network, Brain, TreePine, Hash, Cpu } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function QuizPage() {
+
+  const [searchTerm, setSearchTerm] = useState("");
   
   const quizzes = [
     {
@@ -39,6 +42,48 @@ export default function QuizPage() {
       topBarBg: "bg-indigo-500/10 dark:bg-indigo-500/20",
       iconStyle: "bg-indigo-500/10 border border-indigo-500/20 dark:border-indigo-500/30 text-indigo-600 dark:text-indigo-400",
       btnBg: "bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600",
+    },
+    {
+      title: "String Operations Quiz",
+      description:
+        "Practice Reverse String, Palindrome Check, Character Frequency, Longest Common Prefix, and Anagram Check.",
+      href: "/visualizer/string/quiz",
+      icon: Search,
+      filename: "string_operations_quiz.js",
+      cardBorder: "border-pink-500/20 dark:border-pink-500/30",
+      topBarBg: "bg-pink-500/10 dark:bg-pink-500/20",
+      iconStyle:
+        "bg-pink-500/10 border border-pink-500/20 dark:border-pink-500/30 text-pink-600 dark:text-pink-400",
+      btnBg:
+        "bg-pink-600 hover:bg-pink-700 dark:bg-pink-500 dark:hover:bg-pink-600",
+    },
+    {
+      title: "String Pattern Matching Quiz",
+      description:
+        "Practice String algorithms including Reverse String, Palindrome Check, Character Frequency, Longest Common Prefix, Anagram Check, KMP Algorithm, Rabin-Karp, and Z Algorithm.",
+      href: "/visualizer/string/pattern-matching/quiz",
+      icon: Search,
+      filename: "string_operations_quiz.js",
+      cardBorder: "border-pink-500/20 dark:border-pink-500/30",
+      topBarBg: "bg-pink-500/10 dark:bg-pink-500/20",
+      iconStyle:
+        "bg-pink-500/10 border border-pink-500/20 dark:border-pink-500/30 text-pink-600 dark:text-pink-400",
+      btnBg:
+        "bg-pink-600 hover:bg-pink-700 dark:bg-pink-500 dark:hover:bg-pink-600",
+    },
+    {
+      title: "String Interview Problems",
+      description:
+        "Practice frequently asked string interview problems including Longest Substring Without Repeating Characters, Minimum Window Substring, Longest Repeating Character Replacement, and more.",
+      href: "/visualizer/string/interview-problems",
+      icon: Search,
+      filename: "string_interview_problems.js",
+      cardBorder: "border-pink-500/20 dark:border-pink-500/30",
+      topBarBg: "bg-pink-500/10 dark:bg-pink-500/20",
+      iconStyle:
+        "bg-pink-500/10 border border-pink-500/20 dark:border-pink-500/30 text-pink-600 dark:text-pink-400",
+      btnBg:
+        "bg-pink-600 hover:bg-pink-700 dark:bg-pink-500 dark:hover:bg-pink-600",
     },
     {
       title: "Recursion Quiz",
@@ -329,6 +374,9 @@ export default function QuizPage() {
         "bg-cyan-600 hover:bg-cyan-700 dark:bg-cyan-500 dark:hover:bg-cyan-600",
     },
   ];
+  const filteredQuizzes = quizzes.filter((quiz) =>
+    quiz.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
   return (
     <div className="min-h-screen bg-white dark:bg-[#1c1d1f] text-[var(--udemy-text)] dark:text-white transition-colors duration-300 pb-20">
       
@@ -341,8 +389,25 @@ export default function QuizPage() {
             <span className="animate-pulse text-violet-500">_</span>
           </h1>
         </div>
+        <div className="mb-8">
+          <div className="relative">
+            <Search
+              size={20}
+              className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
+            />
+
+            <input
+              type="text"
+              placeholder="Search quizzes... (Press / or Ctrl+K)"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="w-full rounded-2xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-[#1a1a1a] py-4 pl-12 pr-4 text-base outline-none focus:border-violet-500 focus:ring-2 focus:ring-violet-200 dark:focus:ring-violet-800 transition"
+            />
+          </div>
+        </div>
         <div className="grid md:grid-cols-2 gap-6 items-stretch">
-          {quizzes.map((quiz, index) => {
+          {filteredQuizzes.length > 0 ? (
+            filteredQuizzes.map((quiz, index) => {
             const IconComponent = quiz.icon;
             return (
               <motion.div
@@ -391,8 +456,21 @@ export default function QuizPage() {
                 </div>
               </motion.div>
             );
-          })}
+          })
+          ) : (
+            <div className="col-span-2 text-center py-20">
+              <p className="text-lg text-gray-500 dark:text-gray-400">
+                No quizzes found.
+              </p>
+            </div>
+          )}
         </div>
+        <Link
+          href="/visualizer"
+            className="mt-16 mx-auto flex w-fit items-center gap-2 px-6 py-3 rounded-2xl border border-udemy-border dark:border-udemy-dark-border hover:border-udemy-purple hover:text-udemy-purple dark:hover:text-udemy-purple-light transition bg-white dark:hover:border-udemy-purple dark:bg-udemy-dark-surface font-medium"
+        >
+          ← Back to Visulaizer
+        </Link>
       </div>
     </div>
   );

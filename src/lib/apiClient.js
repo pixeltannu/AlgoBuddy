@@ -30,6 +30,14 @@ class ApiClient {
 
     if (this.csrfToken) return this.csrfToken;
 
+    if (typeof document !== 'undefined') {
+      const metaTag = document.querySelector('meta[name="csrf-token"]');
+      if (metaTag) {
+        this.csrfToken = metaTag.getAttribute('content');
+        return this.csrfToken;
+      }
+    }
+
     if (!this.csrfTokenPromise) {
       this.csrfTokenPromise = fetch("/api/csrf-token", { method: "GET" })
         .then(async (res) => {
@@ -106,7 +114,11 @@ class ApiClient {
         // refresh failed
       }
 
-      localStorage.removeItem("supabase.auth.token");
+      try {
+        await supabase.auth.signOut({ scope: 'local' });
+      } catch {
+        // signOut failed — best-effort cleanup
+      }
 
       if (typeof window !== "undefined") {
         window.location.href = "/login";

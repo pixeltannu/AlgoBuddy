@@ -66,6 +66,68 @@ export const sections = [
     ],
   },
   {
+    title: "String",
+    slug: "string",
+    desc: "Pattern matching, string manipulation, and interview-based string algorithms",
+    subsections: [
+      {
+        title: "Basic Operations",
+        items: [
+          {
+            name: "Reverse String",
+            path: "/visualizer/string/reverse-string",
+          },
+          {
+            name: "Palindrome Check",
+            path: "/visualizer/string/palindrome-check",
+          },
+          {
+            name: "Character Frequency",
+            path: "/visualizer/string/character-frequency",
+          },
+          {
+            name: "Anagram Check",
+            path: "/visualizer/string/anagram-check",
+          },
+          {
+            name: "Longest Common Prefix",
+            path: "/visualizer/string/longest-common-prefix",
+          },
+        ],
+      },
+      {
+        title: "Pattern Matching",
+        items: [
+          {
+            name: "KMP Algorithm",
+            path: "/visualizer/string/kmp-algorithm",
+          },
+          {
+            name: "Rabin-Karp",
+            path: "/visualizer/string/rabin-karp",
+          },
+          {
+            name: "Z Algorithm",
+            path: "/visualizer/string/z-algorithm",
+          },
+        ],
+      },
+      {
+        title: "Interview Problems",
+        items: [
+          {
+            name: "Longest Non-Repeating Substring",
+            path: "/visualizer/string/longest-substring",
+          },
+          {
+            name: "Minimum Window Substring",
+            path: "/visualizer/string/minimum-window-substring",
+          },
+        ],
+      },
+    ],
+  },  
+  {
     title: "Recursion",
     slug: "recursion",
     desc: "Understand stack frames, call stacks, base cases, and tree recursion through animated execution flow",
@@ -224,6 +286,7 @@ export const sections = [
           { name: "AVL Tree Deletion", path: "/visualizer/tree/avl/deletion" },
           { name: "Trie (Prefix Tree)", path: "/visualizer/tree/advanced/trie" },
           { name: "Segment Trees", path: "/visualizer/tree/advanced/segment" },
+          { name: "2D Segment Trees", path: "/visualizer/tree/advanced/segment-2d" },
           { name: "Fenwick Trees", path: "/visualizer/tree/advanced/fenwick" },
         ],
       },
